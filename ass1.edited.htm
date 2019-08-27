@@ -1,0 +1,748 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Machine Learning Assignment 1</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:等线;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"等线 Light";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@等线";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@等线 Light";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:等线;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:17.0pt;
+	margin-right:0cm;
+	margin-bottom:16.5pt;
+	margin-left:0cm;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:240%;
+	page-break-after:avoid;
+	font-size:22.0pt;
+	font-family:等线;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:等线;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:等线;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	font-size:16.0pt;
+	font-family:"等线 Light";
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Subtitle Char";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:130%;
+	font-size:16.0pt;
+	font-family:等线;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{mso-style-link:"No Spacing Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:等线;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	font-size:10.5pt;
+	font-family:等线;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"等线 Light";
+	color:#2F5496;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"等线 Light";
+	font-weight:bold;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-link:Subtitle;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-weight:bold;}
+p.EndNoteBibliographyTitle, li.EndNoteBibliographyTitle, div.EndNoteBibliographyTitle
+	{mso-style-name:"EndNote Bibliography Title";
+	mso-style-link:"EndNote Bibliography Title Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:10.0pt;
+	font-family:等线;}
+span.EndNoteBibliographyTitleChar
+	{mso-style-name:"EndNote Bibliography Title Char";
+	mso-style-link:"EndNote Bibliography Title";
+	font-family:等线;}
+p.EndNoteBibliography, li.EndNoteBibliography, div.EndNoteBibliography
+	{mso-style-name:"EndNote Bibliography";
+	mso-style-link:"EndNote Bibliography Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.0pt;
+	font-family:等线;}
+span.EndNoteBibliographyChar
+	{mso-style-name:"EndNote Bibliography Char";
+	mso-style-link:"EndNote Bibliography";
+	font-family:等线;}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-link:"No Spacing";}
+.MsoChpDefault
+	{font-family:等线;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link="#0563C1" vlink="#954F72" style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNoSpacing align=center style='margin-top:77.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><span lang=EN-US
+style='color:#4472C4'><img width=149 height=79 id="Picture 143"
+src="ass1.edited_files/image001.png"></span></p>
+
+<div style='border-top:solid #4472C4 1.0pt;border-left:none;border-bottom:solid #4472C4 1.0pt;
+border-right:none;padding:6.0pt 0cm 6.0pt 0cm'>
+
+<p class=MsoNoSpacing align=center style='margin-bottom:12.0pt;text-align:center;
+border:none;padding:0cm'><span lang=EN-US style='font-size:36.0pt;color:#4472C4'>Machine
+Learning Assignment 1</span></p>
+
+</div>
+
+<div style='border-top:solid #4472C4 1.0pt;border-left:none;border-bottom:solid #4472C4 1.0pt;
+border-right:none;padding:6.0pt 0cm 6.0pt 0cm'>
+
+<p class=MsoNoSpacing align=center style='margin-bottom:12.0pt;text-align:center;
+border:none;padding:0cm'><span lang=EN-US style='font-size:14.0pt;color:#4472C4'>Literature
+review: LEARNING INTERNAL REPRESENTATIONS BY ERROR PROPAGATION</span></p>
+
+</div>
+
+<p class=MsoNoSpacing align=center style='margin-top:24.0pt;text-align:center'><span
+style='position:absolute;z-index:251658752;left:0px;margin-left:0px;margin-top:
+0px;width:768px;height:86px'><img width="100%"
+src="ass1.edited_files/image002.png"
+alt="AUGUST 27, 2019&#13;&#10;Name: Liang Ou&#13;&#10;Student ID: 13060835&#13;&#10;"></span><span
+lang=EN-US><span style='color:#4472C4'><img width=80 height=50 id="Picture 144"
+src="ass1.edited_files/image003.png"></span></span></p>
+
+<span lang=EN-US style='font-size:10.5pt;font-family:等线'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=left style='text-align:left'><a name="OLE_LINK1"><b><span
+lang=EN-US style='font-size:16.0pt;font-family:"等线 Light"'>&nbsp;</span></b></a></p>
+
+<p class=MsoTocHeading><span lang=EN-US>Table of Contents</span></p>
+
+<p class=MsoToc1><span lang=EN-US><span class=MsoHyperlink><a
+href="#_Toc17791563">Introduction<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791564">Content<span style='color:windowtext;display:none;
+text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791565">Innovation<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791566">Technical quality<span style='color:windowtext;display:
+none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791567">Application and X-factor<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791568">Presentation<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></span></p>
+
+<p class=MsoToc1><span class=MsoHyperlink><span lang=EN-US><a
+href="#_Toc17791569">References<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></span></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;font-family:等线'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><a name="OLE_LINK2"></a><a name="_Toc17791563"><span lang=EN-US>Introduction</span></a><span
+lang=EN-US> </span></h1>
+
+<p class=MsoNormal><span lang=EN-AU>Minsky and Papert (1969) proposed the
+problem of the many-layered version neural network lacks powerful convergence
+theorem. To solve this problem, the authors of this book have found a learning
+result sufficiently powerful to demonstrate that their pessimism about learning
+in multi-layer machines was misplaced.</span></p>
+
+<p class=MsoNormal><span lang=EN-AU>The authors point out that without hidden
+layers in a neural network, it is unable to learn certain mappings between
+similar inputs and different outputs using the similarity of patterns. However,
+by adding internal representation units to augment the original input pattern,
+the network can perform any mapping from input to output.<a name="OLE_LINK3">
+However, optimizing weights between units of such network is a complicated job.
+This book proposes a so called “backpropagation” method to address this
+optimization problem.</a></span></p>
+
+<h1><a name="_Toc17791564"><span lang=EN-US>Content</span></a><span lang=EN-US>
+</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>The main challenge of the book is defining
+a generalized learning procedure for multi-layer perceptron network. This is
+because multi-layer neural networks have hidden units between input layer and
+output layer, thus change of weights between layers influence the inputs of the
+units in higher layers, which bring a difficulty to optimize these weights. Although
+there are several methods for updating weights, they all have limitations. </span><span
+lang=EN-AU>Therefore, network with hidden layers units cannot use a simple
+rule, such as &quot;delta rule”, for all problem, 3 response is proposed:</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-AU>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>Competitive Learning: hidden units develop by
+simple unsupervised learning rules.</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>The disadvantage of the response is that there
+is no guarantee that hidden units appropriate for the required mapping are
+developed.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-AU>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>assume an internal representation: </span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>appropriate for verb learning and word
+perception</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-AU>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>develop a <b>learning procedure</b> which is
+adjustable for task variations. </span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>Boltzmann machines:</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>Uses stochastic units</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>Reach equilibrium in two different phases</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>limited to symmetric networks</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>stochastic units by Barto (1985)</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>generalized delta rule.</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>deterministic units</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>ii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>involves only local computations</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>iii.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>a clear generalization of the delta rule</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>learning-logic (Parker (1985))</span></p>
+
+<p class=MsoListParagraph style='margin-left:63.0pt;text-indent:-63.0pt'><span
+lang=EN-AU><span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>i.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>a similar generalization with “generalized delta
+rule”</span></p>
+
+<p class=MsoListParagraph style='margin-left:42.0pt;text-indent:-21.0pt'><span
+lang=EN-AU>e)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-AU>Le Cun (1985) has also studied a roughly similar
+learning scheme.</span></p>
+
+<p class=MsoNormal><span lang=EN-AU>This book proposed a generalized delta rule
+by backpropagation of the error signal. This approach is tested in several kind
+of problems and yields significant success. The detail of this approach and its
+results are discussed in the following section.</span></p>
+
+<h1><a name="_Toc17791565"><span lang=EN-US>Innovation</span></a><span
+lang=EN-US> </span></h1>
+
+<p class=MsoNormal><span lang=EN-US>The learning procedure this book proposed
+is called “The Generalized Delta Rule”.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The three steps of delta rule are: </span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>uses the input vector to produce its output
+vector</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>compares this with the desired output or target
+vector.</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>the difference is reduced by change weights</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>The standard delta rule is given by the
+following formula: </span></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US style='font-size:10.5pt;font-family:等线'><img width=200 height=21
+src="ass1.edited_files/image004.png"></span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US>For </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.5pt'><img
+width=18 height=21 src="ass1.edited_files/image005.png"></span><span
+lang=EN-US>, j refers to the jth perceptron in the output layer, i refers to
+the ith perceptron in the input layer. This formula explains weights will
+change by measuring the difference between target output and actual output.</span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=11 height=21 src="ass1.edited_files/image006.png"></span><span
+lang=EN-US>&nbsp;is the learning rate. This can be derived by taking the
+partial derivative of Error (defined by </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:12.0pt'><img
+width=127 height=42 src="ass1.edited_files/image007.png"></span><span
+lang=EN-US>) with respect to </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.5pt'><img
+width=18 height=21 src="ass1.edited_files/image005.png"></span><span
+lang=EN-US>. It is given by: ( </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:13.0pt'><img
+width=87 height=42 src="ass1.edited_files/image008.png"></span><span
+lang=EN-US>).</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>Error signal:</span></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US style='font-size:10.5pt;font-family:等线'><img width=163 height=42
+src="ass1.edited_files/image009.png"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>This function means the “error signal” of a
+perceptron is calculated by its firing strength’s derivative multiplies the sum
+weighted “error signal” of its connected upper perceptron. If the perceptron is
+output perceptron, the last term is </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=65 height=21 src="ass1.edited_files/image010.png"></span><span
+lang=EN-US>. Error signal means the derivative of the error with respect to net
+input, defined by the formula </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:13.0pt'><img
+width=82 height=42 src="ass1.edited_files/image011.png"></span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>The delta rule for semilinear activation
+functions in feedforward networks:</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>By adding hidden units w may converge at local
+minima.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The activation function is defined as </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:13.0pt'><img
+width=123 height=42 src="ass1.edited_files/image012.png"></span><span
+lang=EN-US>, its derivative is calculated through&nbsp; </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:13.0pt'><img
+width=124 height=42 src="ass1.edited_files/image013.png"></span><span
+lang=EN-US>. </span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>SIMULATION RESULTS</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>After several simulations, the authors
+found there are two major local minima issues involved in their optimization
+procedure:</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US>Symmetry breaking:</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>If weights are initiated equally, the error
+signal could be the same, because it is calculated by weight multiplies output
+error. Then the changes for all neurons are the same, which again results in
+the same weights. To solve its local maximum risk, small random weights is
+initiated. </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><b><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></b><b><span lang=EN-US>A rare local minima:</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>If two opposite pattern's (like 0 and 1)
+net input for the output unit is 0 (the output is defined to be 0 if net input
+is negative, and 1 if net input is positive), the outputs for both cases are
+0.5, and errors are 0.5 and -0.5, so the sum of the error is 0. And the weight
+will not change.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>To further discuss the effectiveness and
+issues of the learning procedure, this book elaborates several problems.</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>Problem 1: XOR problem</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>An experiment of XOR problem with only one
+hidden layer shown that </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=122 height=21 src="ass1.edited_files/image014.png"></span><span
+lang=EN-US>, in which P is the average number of presentations to solve the
+problem, H is the number of hidden units employed. The formula implies that as
+the number of hidden units increases, the solving time reduces. Another finding
+it the within the range from 0.1 to 0.75, the larger the learning rate, the
+faster the converging speed. For the learning rate, beyond 0.75, the predictor will
+be unstable.</span></p>
+
+<p class=MsoNormal><a name="OLE_LINK8"></a><a name="OLE_LINK7"><b><span
+lang=EN-US>Problem 2:</span></b></a><b><span lang=EN-US> Parity</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>If the answer is different for similar
+input patterns, the hidden layer is needed to interpret the problem.</span></p>
+
+<p class=MsoNormal><a name="OLE_LINK10"><b><span lang=EN-US>Problem 3:</span></b></a><b><span
+lang=EN-US> The Encoding Problem</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>Using intermediate values other than only 0
+(fully turned off) and 1 (<a name="OLE_LINK9">fully turned on</a>) as output
+values increase the flexibility of the learning system.</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>Problem 4: Symmetry</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US>Only 2 hidden units are enough for
+classifying whether an input pattern is symmetric or not. The network does that
+by applying symmetry weights for all input neurons with opposite signs, such as
+</span><span lang=EN-AU>1, -2, 4, -4, 2, -1 for one neuron and -1, 2, -4, 4,
+-2, 1 for the other. The negative biases on hidden units and positive bias on
+the output units insure that the output only turns on for symmetric input values.</span></p>
+
+<p class=MsoNormal><a name="OLE_LINK12"><b><span lang=EN-US>Problem 5: </span></b></a><a
+name="OLE_LINK11"></a><b><span lang=EN-AU>Addition</span></b></p>
+
+<p class=MsoNormal><span lang=EN-AU>For two “m” length of binary bits, a
+minimal network needs 2m inputs units, m carry (hidden) units and m+1 output
+units. Because the lower carry unit should be considered as one input units of
+a higher carry unit, an appropriate connection of hidden layer is necessary.
+This local minima problem can be solved by adding one more hidden units. </span></p>
+
+<p class=MsoNormal><span lang=EN-AU>This Addition problem demonstrates that if
+the number of hidden units is more than minimal requirement, it enhances the
+interpretability and avoids localist (stuck in local minima). However, hidden
+units become hard to be interpreted, and their importance is the same.</span></p>
+
+<p class=MsoNormal><a name="OLE_LINK14"></a><a name="OLE_LINK13"><b><span
+lang=EN-US>Problem 6: </span></b></a><b><span lang=EN-AU>The Negation Problem</span></b></p>
+
+<p class=MsoNormal><span lang=EN-AU>T</span><span lang=EN-US>his is the problem
+in which one input is considered as a &quot;sign&quot; to control whether the n
+outputs should be exactly the same as the rest of n inputs or the complement of
+those inputs. In this case, n hidden units are needed to detect the combination
+of the &quot;sign&quot; and every input unit.</span></p>
+
+<p class=MsoNormal><b><span lang=EN-US>Problem 7: </span></b><b><span
+lang=EN-AU>The T-C Problem</span></b></p>
+
+<p class=MsoNormal><span lang=EN-AU>A system is designed to discriminate the
+shape of “T” and “C”, which consist of 5 squares. Each hidden units measures
+the inputs' shape by projecting the inputs into a</span><span lang=EN-AU> </span><span
+lang=EN-AU>square 3 x 3 region. Feature detector of all hidden units is the
+same, how due to the location and rotation of the inputs is uncertain. A
+two-dimensional grid of hidden units is required to scan the input space for
+pattern recognition. Features detected of the hidden units “includes on</span><span
+lang=EN-AU>-</span><span lang=EN-AU>center-off-surround”, “vertical bar”, “diagonal
+bar” and “compactness”.</span></p>
+
+<p class=MsoNormal><span lang=EN-AU>One conclusion from the solutions of this
+problem is that inhibit the hidden units at the beginning of the learning can
+avoid correct answer by random connections. That means without turning on by
+inputs, the hidden units should be on. </span></p>
+
+<p class=MsoNormal><b><span lang=EN-AU>Generalization:</span></b></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-AU>This book than generalize the generalized delta rule to sigma-pi
+units and recurrent networks. For sigma-pi units with conjunction less than
+two, the error signal is given by</span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线'><img width=159 height=42
+src="ass1.edited_files/image015.png"></span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US>For </span><span lang=EN-AU>recurrent networks, they can be
+transformed into multiple layered feedforward network with same weights for
+every iteration. The experiment for “<b>shift register</b>” shows that the
+system will set all weights to be 0, but the one connects to its left to be
+within 200 sweeps and with learning rate </span>η<span lang=EN-AU>= 0.25.
+Another experiment of “<b>complete sequences”</b> let errors are injected at
+each time-step by comparing the remembered actual states of the output units
+with their desired states.</span></p>
+
+<h1><a name="_Toc17791566"><span lang=EN-US>Technical quality</span></a><span
+lang=EN-US> </span></h1>
+
+<p class=MsoNormal><span lang=EN-US>In the aspects of theory inference and
+formula derivation, this book has a high quality. This is because it derives
+its formulas step by step with an explicit explanation of all variables and
+notations. Moreover, limitation and issues of backpropagation are widely
+discussed, which facilities further relative research.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>In the simulation part, although it explores
+many problems and evaluates the learning procedure by the time complexity and
+accuracy, it lacks the explanation for how the backpropagation algorithm is
+applied to each problem. Therefore, although the results look pretty neat, it
+can not be replicated by readers, or at least hard to be re-implemented.</span></p>
+
+<h1><a name="_Toc17791567"><span lang=EN-US>Application and X-factor</span></a></h1>
+
+<p class=MsoNormal><span lang=EN-US>Apart from backpropagation, there are numbers
+of optimization algorithms have developed for a neural network. One type of
+popular algorithms are Evolutionary Algorithms (EAs) which mimic natural
+evolutionary principles. EAs can be further divided into Evolutionary
+strategies (ES), Evolutionary Programming (EP), Genetic Algorithms (GAs), and Genetic
+Programming (GP). Take GAs as an example, it optimizes all weights in a network
+with the following process:</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>reproduction:</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US>Different combinations of weights are evaluated and the best of them
+are selected</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>recombination (crossover):</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US>interchange some weights in two sets of weights</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:-18.0pt'><span
+lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US>mutation:</span></p>
+
+<p class=MsoListParagraph style='margin-left:18.0pt;text-indent:0cm'><span
+lang=EN-US>randomly change some weights</span></p>
+
+<p class=MsoNormal><span lang=EN-US>The merit of GAs is that it can easily
+escape from local minima.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Another type of optimization algorithm is Swarm
+Intelligence (SI), by which individual solution communicate with each other for
+finding the optima in the solution space.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>One example of SI is Particle Swarm
+Optimization (PSO), which is a population-based stochastic optimization
+technique developed by Dr. Eberhart and Dr. Kennedy in 1995. In PSO, every particle
+(solution) have its position (</span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=11 height=21 src="ass1.edited_files/image016.png"></span><span
+lang=EN-US>) and moving speed (</span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=11 height=21 src="ass1.edited_files/image017.png"></span><span
+lang=EN-US>). For each iteration, the moving speed is updated by the following
+formula </span><span
+lang=EN-US>(Kennedy 2010)</span><span lang=EN-US>:</span></p>
+
+<p class=MsoNormal><span
+lang=EN-US style='font-size:10.5pt;font-family:等线'><img width=369 height=42
+src="ass1.edited_files/image018.png"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Where </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=12 height=21 src="ass1.edited_files/image019.png"></span><span
+lang=EN-US>&nbsp;and </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=12 height=21 src="ass1.edited_files/image020.png"></span><span
+lang=EN-US>&nbsp;are acceleration coefficients, often positive constants, </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=16 height=21 src="ass1.edited_files/image021.png"></span><span
+lang=EN-US>&nbsp;and </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=16 height=21 src="ass1.edited_files/image022.png"></span><span
+lang=EN-US>&nbsp;are random numbers in [0,1],&nbsp; </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=29 height=21 src="ass1.edited_files/image023.png"></span><span
+lang=EN-US>&nbsp;is the best position of particle </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=11 height=21 src="ass1.edited_files/image016.png"></span><span
+lang=EN-US>&nbsp;and </span><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.5pt'><img
+width=32 height=21 src="ass1.edited_files/image024.png"></span><span
+lang=EN-US>&nbsp;is the best position of all particles, t is the iteration. By
+updating the position through </span></p>
+
+<p class=MsoNormal><span
+lang=EN-US style='font-size:10.5pt;font-family:等线;position:relative;top:4.0pt'><img
+width=170 height=21 src="ass1.edited_files/image025.png"></span><span
+lang=EN-US>, all particles move toward the best one.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Although PSO is very efficient in
+converging to the best solution, it is likely to trap in certain local minima.
+Another SI algorithm, called Firework Algorithm (FA) provides both efficiency
+and diversity. The framework of FA is generating new solutions (sparks) by old
+solutions (fireworks), the explosion (search) radius</span><span lang=EN-AU>
+and density are defined by </span><span lang=EN-US>fireworks’ performances </span><span
+lang=EN-US>(Tan &amp; Zhu 2010)</span><span lang=EN-US>. Selection strategy in
+FA is based on the distance (similarity) of particles so that the diversity of
+particles of the next generation is guaranteed. &nbsp;</span></p>
+
+<h1><a name="_Toc17791568"><span lang=EN-US>Presentation</span></a><span
+lang=EN-US> </span></h1>
+
+<p class=MsoNormal><span lang=EN-US>If the lowest rate the quality is 0 and the
+highest rate of quality is 5, I will rate this book with a rate of 4. Overall,
+the organization of this book well-aligned, terminologies in this book is well-
+explained. Therefore, one can easily grasp the main concept of
+&quot;backpropagation&quot; even as a beginner for machine learning. However, there
+are still some bad presentation approaches make me feel hard to follow the book.
+First, when it uses some definition discussed in other chapters, such as “semilinear”,
+“sigma-pi units”, there is no brief description at all. This explanation style
+makes those concepts impossible to understand due to other chapters are not
+available to readers. Second, it wastes length very much on calculating simple
+numerical additions for inputs and outputs rather than explaining why such
+additions should be happening. Third, many experiments on the research of this
+book are based on Minsky and Papert (1969)’s book. However, it assumes that
+readers should understand the research problems proposed by Minsky and Papert
+(1969), while in most cases they probably don't.</span></p>
+
+<h1><a name="_Toc17791569"><span lang=EN-US>References</span></a><span
+lang=EN-US> </span></h1>
+
+<p class=EndNoteBibliography style='margin-left:36.0pt;text-indent:-36.0pt'><span lang=EN-US>Kennedy, J. 2010, 'Particle swarm optimization', <i>Encyclopedia of
+machine learning</i>, pp. 760-6.</span></p>
+
+<p class=EndNoteBibliography><span lang=EN-US>&nbsp;</span></p>
+
+<p class=EndNoteBibliography><span lang=EN-US>Tan, Y. &amp; Zhu, Y. 2010,
+'Fireworks Algorithm for Optimization', eds Y. Tan, Y. Shi &amp; K.C. Tan,
+Springer Berlin Heidelberg, pp. 355-64.</span><span lang=EN-US><a name="_GoBack"></a></span></p>
+
+</div>
+
+</body>
+
+</html>
